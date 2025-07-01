@@ -39,3 +39,7 @@ db/.env
 
 # extras
 *.env
+
+# test
+.nyc_output/
+coverage/

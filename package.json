@@ -17,15 +17,19 @@
     "@cap-js/cds-types": "^0.10.0",
     "@cap-js/sqlite": "^1",
     "@sap/cds-dk": "^8",
-    "rimraf": "^5.0.5",
-    "mbt": "^1.2.29"
+    "mbt": "^1.2.29",
+    "nyc": "^17.1.0",
+    "qunit": "^2.24.1",
+    "rimraf": "^5.0.5"
   },
   "scripts": {
     "start": "cds-serve",
     "watch-elearningapp": "cds watch --open elearningapp/webapp/index.html?sap-ui-xx-viewCache=false",
     "undeploy": "cf undeploy e_Learning --delete-services --delete-service-keys --delete-service-brokers",
     "build": "rimraf resources mta_archives && mbt build --mtar archive",
-    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "test": "qunit test/unit",
+    "coverage": "nyc --reporter=html --reporter=text npm run test"
   },
   "cds": {
     "build": {
