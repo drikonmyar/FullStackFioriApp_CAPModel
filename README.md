@@ -10,3 +10,9 @@ Full Stack Fiori Application using CAP Model
 `cds bind -2 e_Learning-db:SharedDevKey` -> to bind HDI container
 
 `cds watch --profile hybrid` -> to deploy locally
+
+### CoverageTest
+
+`npm install --save-dev nyc qunit` -> to install nyc and qunit dependencies
+
+`npm run coverage` -> to check coverage
